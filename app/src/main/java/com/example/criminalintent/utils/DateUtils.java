@@ -1,4 +1,4 @@
-package com.example.criminalintent.controller.utils;
+package com.example.criminalintent.utils;
 
 import java.time.Instant;
 import java.util.Date;

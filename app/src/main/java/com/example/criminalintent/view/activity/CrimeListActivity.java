@@ -1,4 +1,4 @@
-package com.example.criminalintent.controller.activity;
+package com.example.criminalintent.view.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,8 +6,8 @@ import android.content.Intent;
 import androidx.fragment.app.Fragment;
 
 import com.example.criminalintent.R;
-import com.example.criminalintent.controller.fragment.CrimeDetailFragment;
-import com.example.criminalintent.controller.fragment.CrimeListFragment;
+import com.example.criminalintent.view.fragment.CrimeDetailFragment;
+import com.example.criminalintent.view.fragment.CrimeListFragment;
 import com.example.criminalintent.model.Crime;
 
 public class CrimeListActivity extends SingleFragmentActivity

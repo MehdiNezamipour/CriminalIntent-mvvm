@@ -1,4 +1,4 @@
-package com.example.criminalintent.controller.activity;
+package com.example.criminalintent.view.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.criminalintent.R;
-import com.example.criminalintent.controller.fragment.CrimeDetailFragment;
+import com.example.criminalintent.view.fragment.CrimeDetailFragment;
 import com.example.criminalintent.model.Crime;
 import com.example.criminalintent.repository.CrimeDBRepository;
 import com.example.criminalintent.repository.IRepository;

@@ -1,7 +1,6 @@
-package com.example.criminalintent.controller.fragment;
+package com.example.criminalintent.view.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.criminalintent.R;
-import com.example.criminalintent.controller.activity.CrimePagerActivity;
 import com.example.criminalintent.model.Crime;
 import com.example.criminalintent.repository.CrimeDBRepository;
 import com.example.criminalintent.repository.IRepository;

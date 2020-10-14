@@ -1,4 +1,4 @@
-package com.example.criminalintent.controller.fragment;
+package com.example.criminalintent.view.fragment;
 
 import android.app.Activity;
 import android.app.AlertDialog;

@@ -1,4 +1,4 @@
-package com.example.criminalintent.controller.fragment;
+package com.example.criminalintent.view.fragment;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
-import android.telecom.Call;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
