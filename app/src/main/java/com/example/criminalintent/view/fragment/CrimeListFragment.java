@@ -99,7 +99,6 @@ public class CrimeListFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
         //performance issues
         updateUI();
     }
@@ -118,7 +117,6 @@ public class CrimeListFragment extends Fragment {
                 return true;
             case R.id.menu_item_subtitle:
                 mIsSubtitleVisible = !mIsSubtitleVisible;
-//                updateMenuItemSubtitle(item);
                 updateSubtitle();
                 getActivity().invalidateOptionsMenu();
                 return true;
@@ -163,8 +161,6 @@ public class CrimeListFragment extends Fragment {
         mCallBacks.onCrimeSelected(crime);
         updateUI();
 
-//        Intent intent = CrimePagerActivity.newIntent(getActivity(), crime.getId());
-//        startActivity(intent);
     }
 
     private void updateSubtitle() {
@@ -179,7 +175,7 @@ public class CrimeListFragment extends Fragment {
         activity.getSupportActionBar().setSubtitle(crimesString);
     }
 
-    //view holder responsibility: hold reference to row views.
+
     private class CrimeHolder extends RecyclerView.ViewHolder {
 
         private Crime mCrime;
@@ -211,11 +207,7 @@ public class CrimeListFragment extends Fragment {
         }
     }
 
-    /*adapter responsibilities:
-        1. getItemCounts
-        2. create view holder
-        3. bind view holder
-     */
+
     private class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder> {
 
         private List<Crime> mCrimes;
