@@ -21,7 +21,6 @@ import java.util.UUID;
 public class CrimePagerActivity extends AppCompatActivity implements CrimeDetailFragment.Callbacks {
 
     private static final String EXTRA_CRIME_ID = "com.example.criminalintent.CrimeId";
-    public static final String TAG = "CPA";
 
     private ActivityCrimePagerBinding mActivityCrimePagerBinding;
 

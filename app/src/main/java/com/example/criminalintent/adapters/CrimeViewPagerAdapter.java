@@ -7,7 +7,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.criminalintent.model.Crime;
 import com.example.criminalintent.view.fragment.CrimeDetailFragment;
-
 import java.util.List;
 
 public class CrimeViewPagerAdapter extends FragmentStateAdapter {

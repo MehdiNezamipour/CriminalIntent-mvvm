@@ -1,0 +1,15 @@
+
+Y
+java:S1128"CRemove this unused import 'java.util.concurrent.ThreadLocalRandom'.(¨ÏÙî
+P
+java:S1118":Add a private constructor to hide the implicit public one.(Ò®ÜÄ
+K
+java:S2209"5Change this instance-reference to a static reference.(èş¸”
+K
+java:S2209"5Change this instance-reference to a static reference.(—«ÀÍ
+K
+java:S2209"5Change this instance-reference to a static reference.(éİ©Ú
+I
+java:S1128".Remove this unused import 'java.time.Instant'.(Â‚éñÿÿÿÿÿ
+D
+java:S2140")Use "java.util.Random.nextInt()" instead.(íŞ øşÿÿÿÿ

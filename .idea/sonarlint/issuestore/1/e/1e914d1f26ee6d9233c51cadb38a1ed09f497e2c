@@ -1,0 +1,23 @@
+
+
+java:S1488‚"^Immediately return this expression instead of assigning it to the temporary variable "report".(¶Á¬ÿÿÿÿÿ8ÕÎë¼Ò.
+
+java:S3252­"^Use static access with "android.provider.ContactsContract$ContactsColumns" for "DISPLAY_NAME".(ÎìËÅşÿÿÿÿ8ÕÎë¼Ò.
+{
+java:S3252 "^Use static access with "android.provider.ContactsContract$ContactsColumns" for "DISPLAY_NAME".(íô„8ÕÎë¼Ò.
+Ÿ
+java:S1186•"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(á¬‡İ8ÕÎë¼Ò.
+Q
+java:S1128"4Remove this unused import 'android.widget.EditText'.(†Å›Ú8ÕÎë¼Ò.
+Y
+java:S1128"7Remove this unused import 'android.widget.ImageButton'.(‚ÏÉõÿÿÿÿÿ8ÕÎë¼Ò.
+P
+java:S1128"4Remove this unused import 'android.widget.CheckBox'.(Ùáb8ÕÎë¼Ò.
+T
+java:S1128"2Remove this unused import 'android.widget.Button'.(²òıÿÿÿÿ8ÕÎë¼Ò.
+W
+java:S1128"5Remove this unused import 'android.widget.ImageView'.(ú¯ëàüÿÿÿÿ8ÕÎë¼Ò.
+V
+java:S1874Á"3Remove this use of "getDrawable"; it is deprecated.( †êÎüÿÿÿÿ8ÕÎë¼Ò.
+¤
+java:S1186¢"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×åó«øÿÿÿÿ8ÕÎë¼Ò.
