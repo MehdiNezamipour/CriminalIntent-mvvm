@@ -39,3 +39,5 @@ Qapp/src/main/java/com/example/criminalintent/view/fragment/CrimeListFragment.ja
 Napp/src/main/java/com/example/criminalintent/repository/CrimeDBRepository.java,b\f\bf272a98ba19236bc3cac1d9e03eab4b9c62a35f
 z
 Japp/src/main/java/com/example/criminalintent/viewmodel/CrimeViewModel.java,4\2\42f60799d5f0c98a3c6eca45dd8b433a39de738e
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e

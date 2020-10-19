@@ -6,12 +6,13 @@ import android.content.Intent;
 import androidx.fragment.app.Fragment;
 
 import com.example.criminalintent.R;
+import com.example.criminalintent.adapters.CrimeAdapter;
 import com.example.criminalintent.view.fragment.CrimeDetailFragment;
 import com.example.criminalintent.view.fragment.CrimeListFragment;
 import com.example.criminalintent.model.Crime;
 
 public class CrimeListActivity extends SingleFragmentActivity
-        implements CrimeListFragment.CallBacks, CrimeDetailFragment.Callbacks {
+        implements CrimeAdapter.OnCrimeSelectListener, CrimeDetailFragment.Callbacks {
 
     public static Intent newIntent(Context context) {
         Intent intent = new Intent(context, CrimeListActivity.class);

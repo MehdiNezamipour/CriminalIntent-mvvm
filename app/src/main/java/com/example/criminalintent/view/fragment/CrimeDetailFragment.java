@@ -17,12 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -68,18 +63,10 @@ public class CrimeDetailFragment extends Fragment {
         //empty public constructor
     }
 
-    /**
-     * Using factory pattern to create this fragment. every class that want
-     * to create this fragment should always call this method "only".
-     * no class should call constructor any more.
-     * @param crimeId this fragment need crime id to work properly.
-     * @return new CrimeDetailFragment
-     */
-    public static CrimeDetailFragment newInstance(UUID crimeId) {
 
+    public static CrimeDetailFragment newInstance(UUID crimeId) {
         Bundle args = new Bundle();
         args.putSerializable(ARG_CRIME_ID, crimeId);
-
         CrimeDetailFragment fragment = new CrimeDetailFragment();
         fragment.setArguments(args);
         return fragment;
@@ -236,7 +223,7 @@ public class CrimeDetailFragment extends Fragment {
                 takePictureIntent,
                 PackageManager.MATCH_DEFAULT_ONLY);
 
-        for (ResolveInfo activity: activities) {
+        for (ResolveInfo activity : activities) {
             getActivity().grantUriPermission(activity.activityInfo.packageName,
                     photoURI,
                     Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
@@ -245,7 +232,7 @@ public class CrimeDetailFragment extends Fragment {
 
     private String getReportText() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        String dateString = simpleDateFormat.format(mCrime.getDate()) ;
+        String dateString = simpleDateFormat.format(mCrime.getDate());
 
         String solvedString = mCrime.isSolved() ?
                 getString(R.string.crime_report_solved) :
@@ -285,7 +272,7 @@ public class CrimeDetailFragment extends Fragment {
         } else if (requestCode == REQUEST_CODE_SELECT_CONTACT) {
             Uri contactUri = data.getData();
 
-            String[] columns = new String[] {ContactsContract.Contacts.DISPLAY_NAME};
+            String[] columns = new String[]{ContactsContract.Contacts.DISPLAY_NAME};
             Cursor cursor = getActivity().getContentResolver().query(contactUri,
                     columns,
                     null,

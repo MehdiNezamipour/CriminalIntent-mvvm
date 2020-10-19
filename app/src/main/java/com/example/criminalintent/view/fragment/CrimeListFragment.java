@@ -14,11 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.criminalintent.R;
+import com.example.criminalintent.adapters.CrimeAdapter;
 import com.example.criminalintent.databinding.FragmentCrimeListBinding;
-import com.example.criminalintent.databinding.ListRowCrimeBinding;
 import com.example.criminalintent.model.Crime;
 import com.example.criminalintent.repository.CrimeDBRepository;
 import com.example.criminalintent.repository.IRepository;
@@ -34,12 +33,8 @@ public class CrimeListFragment extends Fragment {
 
     private IRepository<Crime> mRepository;
     private CrimeAdapter mAdapter;
-    private CallBacks mCallBacks;
+    private CrimeAdapter.OnCrimeSelectListener mOnCrimeSelectListener;
 
-
-    public interface CallBacks {
-        void onCrimeSelected(Crime crime);
-    }
 
     public CrimeListFragment() {
         // Required empty public constructor
@@ -58,8 +53,8 @@ public class CrimeListFragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
 
-        if (context instanceof CallBacks) {
-            mCallBacks = (CallBacks) context;
+        if (context instanceof CrimeAdapter.OnCrimeSelectListener) {
+            mOnCrimeSelectListener = (CrimeAdapter.OnCrimeSelectListener) context;
         } else {
             throw new ClassCastException(context.toString()
                     + " must implement onCrimeSelected");
@@ -69,7 +64,7 @@ public class CrimeListFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        mCallBacks = null;
+        mOnCrimeSelectListener = null;
     }
 
     @Override
@@ -141,8 +136,11 @@ public class CrimeListFragment extends Fragment {
         List<Crime> crimes = mRepository.getList();
 
         if (mAdapter == null) {
-            mAdapter = new CrimeAdapter(crimes);
+            mAdapter = new CrimeAdapter(crimes, getContext());
             mFragmentCrimeListBinding.recyclerViewCrimes.setAdapter(mAdapter);
+            mAdapter.setOnCrimeSelectListener(mOnCrimeSelectListener);
+
+
         } else {
             mAdapter.setCrimes(crimes);
             mAdapter.notifyDataSetChanged();
@@ -154,8 +152,7 @@ public class CrimeListFragment extends Fragment {
     private void addCrime() {
         Crime crime = new Crime();
         mRepository.insert(crime);
-
-        mCallBacks.onCrimeSelected(crime);
+        mOnCrimeSelectListener.onCrimeSelected(crime);
         updateUI();
 
     }
@@ -172,67 +169,5 @@ public class CrimeListFragment extends Fragment {
         activity.getSupportActionBar().setSubtitle(crimesString);
     }
 
-
-    private class CrimeHolder extends RecyclerView.ViewHolder {
-
-
-        private Crime mCrime;
-        private ListRowCrimeBinding mListRowCrimeBinding;
-
-
-        public CrimeHolder(ListRowCrimeBinding listRowCrimeBinding) {
-            super(listRowCrimeBinding.getRoot());
-            mListRowCrimeBinding = listRowCrimeBinding;
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mCallBacks.onCrimeSelected(mCrime);
-                }
-            });
-        }
-
-        public void bindCrime(Crime crime) {
-            mCrime = crime;
-            mListRowCrimeBinding.listRowCrimeTitle.setText(crime.getTitle());
-            mListRowCrimeBinding.listRowCrimeDate.setText(crime.getDate().toString());
-            mListRowCrimeBinding.imgviewSolved.setVisibility(crime.isSolved() ? View.VISIBLE : View.INVISIBLE);
-        }
-    }
-
-
-    private class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder> {
-
-        private List<Crime> mCrimes;
-
-        public void setCrimes(List<Crime> crimes) {
-            mCrimes = crimes;
-        }
-
-        public CrimeAdapter(List<Crime> crimes) {
-            mCrimes = crimes;
-        }
-
-        @Override
-        public int getItemCount() {
-            return mCrimes.size();
-        }
-
-        @NonNull
-        @Override
-        public CrimeHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            LayoutInflater inflater = LayoutInflater.from(getActivity());
-            ListRowCrimeBinding listRowCrimeBinding = DataBindingUtil
-                    .inflate(inflater, R.layout.list_row_crime, parent, false);
-
-            return new CrimeHolder(listRowCrimeBinding);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull CrimeHolder holder, int position) {
-            Crime crime = mCrimes.get(position);
-            holder.bindCrime(crime);
-        }
-    }
 
 }
